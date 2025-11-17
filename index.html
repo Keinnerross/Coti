@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización de Desarrollo</title>
+    <style>
+        @page {
+            margin: 1.5cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-size: 24px;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+        
+        .info-box {
+            background: #ecf0f1;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box p {
+            margin: 3px 0;
+            font-size: 11px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 10px;
+        }
+        
+        th {
+            background: #34495e;
+            color: white;
+            padding: 8px 5px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        td {
+            padding: 6px 5px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .priority-urgente {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        .priority-alta {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        
+        .priority-media {
+            color: #f39c12;
+        }
+        
+        .estado-completed {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .estado-en-curso {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .estado-pending {
+            color: #95a5a6;
+        }
+        
+        .summary {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .summary-item {
+            text-align: center;
+        }
+        
+        .summary-item .label {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+        
+        .summary-item .value {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .notes {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 10px;
+        }
+        
+        .notes h3 {
+            margin: 0 0 8px 0;
+            color: #856404;
+            font-size: 12px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 10px;
+        }
+        
+        .mantenimiento {
+            background: #e8f5e9;
+        }
+        
+        .print-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        
+        .print-button:hover {
+            background: #2980b9;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                font-size: 9px;
+            }
+            
+            th, td {
+                font-size: 8px;
+                padding: 4px 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <h1>Cotización de Desarrollo Web</h1>
+        <p class="subtitle">Mejoras y Funcionalidades - Panel de Administración</p>
+    </div>
+    
+    <div class="info-box">
+        <p><strong>Stack Tecnológico:</strong> Next.js 15 + Strapi</p>
+        <p><strong>Tarifa por Hora:</strong> $35 USD</p>
+        <p><strong>Fecha:</strong> Noviembre 2025</p>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 3%;">#</th>
+                <th style="width: 15%;">Tarea</th>
+                <th style="width: 30%;">Descripción/Detalles</th>
+                <th style="width: 12%;">Type</th>
+                <th style="width: 8%;">Prioridad</th>
+                <th style="width: 8%;">Estado</th>
+                <th style="width: 6%;">Horas</th>
+                <th style="width: 8%;">Costo</th>
+                <th style="width: 10%;">Notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Mantenimiento -->
+            <tr class="mantenimiento">
+                <td>3</td>
+                <td>Teléfono y ciudad obligatorios</td>
+                <td>En página contact us, cambiar de opcional a obligatorio</td>
+                <td>Front - Visual - Contact Page</td>
+                <td class="priority-alta">Alta</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Parte del mantenimiento</td>
+            </tr>
+            
+            <tr class="mantenimiento">
+                <td>13</td>
+                <td>Corrección textos</td>
+                <td>Your guide to Jewish Panama: corregir texto minyanim formato y sección Shabbat</td>
+                <td>Front</td>
+                <td class="priority-alta">Alta</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Parte del mantenimiento</td>
+            </tr>
+            
+            <tr class="mantenimiento">
+                <td>21</td>
+                <td>Términos y condiciones</td>
+                <td>Página de términos y condiciones. Check All links</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="estado-pending">Pending</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Parte del mantenimiento</td>
+            </tr>
+            
+            <!-- Tareas con costo -->
+            <tr>
+                <td>12</td>
+                <td>Corregir horarios Shabbat</td>
+                <td>Rectificación horarios muy equivocados. Viernes noche y sábado. Braha manda horario actualizado</td>
+                <td>Front</td>
+                <td class="priority-urgente">URGENTE</td>
+                <td>-</td>
+                <td>2</td>
+                <td>$70</td>
+                <td>Integración en panel administración</td>
+            </tr>
+            
+            <tr>
+                <td>15</td>
+                <td>PDF menú Shabbat</td>
+                <td>Agregar PDF del menú</td>
+                <td>-</td>
+                <td class="priority-media">Media</td>
+                <td>-</td>
+                <td>0.5</td>
+                <td>$17.5</td>
+                <td>Bottom Custom</td>
+            </tr>
+            
+            <tr>
+                <td>16</td>
+                <td>PDF menú Shabbos Box</td>
+                <td>Agregar PDF del menú</td>
+                <td>-</td>
+                <td class="priority-media">Media</td>
+                <td>-</td>
+                <td>0.5</td>
+                <td>$17.5</td>
+                <td>Bottom Custom</td>
+            </tr>
+            
+            <tr>
+                <td>17</td>
+                <td>Header Nav Menu autogestionable</td>
+                <td>Full capacidad</td>
+                <td>-</td>
+                <td class="priority-media">Media</td>
+                <td class="estado-pending">Pending</td>
+                <td>6</td>
+                <td>$210</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Nombre cliente y monto en lista</td>
+                <td>En order management dashboard, sin hacer click en detalles</td>
+                <td>Backend - Dashboard - Visual</td>
+                <td class="priority-alta">Alta</td>
+                <td>-</td>
+                <td>1</td>
+                <td>$35</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>Sistema delivery Shabbat Box</td>
+                <td>Agregar categoría delivery: pick up 1:00pm-4:00pm (CONDICIÓN), delivery en la ciudad, o pick up at Chabad</td>
+                <td>Front-Backend - Dashboard - Visual</td>
+                <td class="priority-urgente">URGENTE</td>
+                <td>-</td>
+                <td>4-10</td>
+                <td>Variable</td>
+                <td>Requiere reunión previa para revisar flujo</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Info hoteles</td>
+                <td>Tiempo caminando desde Chabad, kids friendly, desayuno kosher, shabbat friendly, habitación en tarjetas Home</td>
+                <td>-</td>
+                <td class="priority-media">Media</td>
+                <td class="estado-en-curso">En curso</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Mejora en desarrollo</td>
+            </tr>
+            
+            <tr>
+                <td>11</td>
+                <td>Editor template email</td>
+                <td>Editar y configurar email confirmación que clientes reciben después compra. Feedback - Contenido - DATS</td>
+                <td>Backend - Mail - Visual</td>
+                <td class="priority-urgente">URGENTE</td>
+                <td class="estado-en-curso">En curso</td>
+                <td>1-4</td>
+                <td>Variable</td>
+                <td>Sujeto a revisión</td>
+            </tr>
+            
+            <tr>
+                <td>20</td>
+                <td>Dashboard analytics</td>
+                <td>Manejo ingreso mensual, semanal, anual, promedios (Por Implementar)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Por implementación general, dispuesto a discusión</td>
+            </tr>
+            
+            <!-- Completadas -->
+            <tr>
+                <td>5</td>
+                <td>Subcategorías restaurantes</td>
+                <td>Elegir entre Meat, Dairy Chalav Stam, Dairy Chalav Israel, Parve</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="estado-completed">Completed</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>7</td>
+                <td>Cambiar popup a página completa</td>
+                <td>Shabbat box en página normal, no cuadro pequeño. Resolución pop up</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="estado-completed">Completed</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Por revisar última versión</td>
+            </tr>
+            
+            <tr>
+                <td>14</td>
+                <td>Anuncios eventos sin reserva</td>
+                <td>Agregar anuncios eventos (chanukah, winter break) que no requieren reserva o compras</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="estado-completed">Completed</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>10</td>
+                <td>Crear/editar eventos nuevos</td>
+                <td>Agregar eventos y manejar parámetros: título, descripción, foto, precio, lugar, formulario reserva. Quitar otros eventos festividades que no son shabbat</td>
+                <td>Backend - Dashboard - Administración - Engine</td>
+                <td class="priority-urgente">URGENTE</td>
+                <td class="estado-completed">Completed</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Por revisión - Por actualizar</td>
+            </tr>
+            
+            <tr>
+                <td>19-8</td>
+                <td>Modificar cantidad reserva + Reservas admin</td>
+                <td>Capacidad modificar cantidad personas, entradas, etc. Integración Stripe, pedidos + Como administrador poder hacer reservas para gente sin pagar</td>
+                <td>Backend - Dashboard</td>
+                <td class="priority-alta">Alta</td>
+                <td>-</td>
+                <td>12</td>
+                <td>$420</td>
+                <td>Funcionalidades combinadas</td>
+            </tr>
+            
+            <tr>
+                <td>1</td>
+                <td>Agregar hora del pedido</td>
+                <td>Mostrar hora en detalles de orden y en Excel</td>
+                <td>Backend - Dashboard - Engine</td>
+                <td class="priority-media">Media</td>
+                <td>-</td>
+                <td>2</td>
+                <td>$75</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>9</td>
+                <td>Gestión eventos</td>
+                <td>Manejar comidas shabbat, limitar puestos, cerrar evento, sold out según cantidad personas</td>
+                <td>Backend - Dashboard - Administración - Engine</td>
+                <td class="priority-urgente">URGENTE</td>
+                <td>-</td>
+                <td>8</td>
+                <td>$280</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="summary">
+        <h2 style="margin: 0 0 10px 0; font-size: 18px;">Resumen de Cotización</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <div class="label">Total Horas</div>
+                <div class="value">32-38</div>
+                <div style="font-size: 10px; margin-top: 5px;">(tareas con costo definido)</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Costo Estimado</div>
+                <div class="value">$1,125</div>
+                <div style="font-size: 10px; margin-top: 5px;">(+ variables a definir)</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Tareas Totales</div>
+                <div class="value">18</div>
+                <div style="font-size: 10px; margin-top: 5px;">4 completadas</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notes">
+        <h3>⚠️ Notas Importantes:</h3>
+        <ul style="margin: 5px 0; padding-left: 20px;">
+            <li>Las tareas marcadas en verde claro son parte del mantenimiento regular (sin costo adicional)</li>
+            <li>Tareas #6 y #11 tienen costos variables que requieren reunión previa para definir alcance</li>
+            <li>Tarea #20 (Dashboard analytics) pendiente de discusión y definición de alcance</li>
+            <li>Tareas #19 y #8 se combinaron en una sola implementación (12 horas - $420)</li>
+            <li>Tareas completadas requieren revisión final antes del cierre</li>
+            <li>Prioridades URGENTES sugeridas para implementación inmediata</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Validez de la cotización:</strong> 30 días | <strong>Forma de pago:</strong> A convenir</p>
+        <p>Para cualquier consulta o modificación, favor contactar al equipo de desarrollo</p>
+    </div>
+</body>
+</html>
